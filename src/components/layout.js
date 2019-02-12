@@ -8,6 +8,12 @@ import defaultTheme from '../assets/defaultTheme';
 import './layout.css'
 
 
+const Container = styled.div`
+  min-height: 100vh;
+  padding-bottom: 50px;
+  background: linear-gradient(45deg,#000000,#000000,#414345,#9b9999);
+`
+
 const Content = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -25,7 +31,7 @@ const Content = styled.div`
 `
 const Layout = ({children}) => {
   return (<ThemeProvider theme={defaultTheme}>
-  <>
+  <Container>
     <Helmet
       meta={[
         { name: 'description', content: 'Sample' },
@@ -39,7 +45,7 @@ const Layout = ({children}) => {
     <Content>
       {children}
     </Content>
-  </>
+  </Container>
   </ThemeProvider>)
 }
 
