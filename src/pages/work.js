@@ -1,0 +1,40 @@
+import React from 'react';
+import {StaticQuery,  graphql } from 'gatsby';
+import styled from 'styled-components';
+import Layout from '../components/layout';
+
+import Description from '../components/molecules/description';
+import JobList from '../components/organisms/job-list';
+
+const JobContent = styled.div`
+  width: 50%;
+`
+
+const ProjectContent = styled.div`
+  width: 50%;
+`
+
+
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        site {
+          siteMetadata {
+            work {
+              desc
+              headline
+            }
+          }
+        }
+    }`}
+    render={data => (
+    <Layout>
+      <JobContent>
+        <Description headline={data.site.siteMetadata.work.headline} content=""></Description>
+        <JobList />
+      </JobContent>
+      <ProjectContent></ProjectContent>
+    </Layout>
+    )} />
+)
