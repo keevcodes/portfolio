@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Headline } from '../atoms/headline';
+import { SmallText } from '../atoms/text';
 
 const KnockoutBackground = styled.div`
 color: #fff;
@@ -20,24 +21,12 @@ const Wrapper = styled.div`
   }
 `
 
-const Text = styled.div`
-  color: #fff;
-  font-size: 16px;
-  width: 100%;
-
-  @media screen and (min-width: 768px) {
-    font-size: 18px;
-    padding-right: 50px;
-  }
-`
-
 const Description = (props) => {
-  const parse = {__html: props.content}
   return (<Wrapper>
     <KnockoutBackground>
       <Headline content={props.headline}></Headline>
     </KnockoutBackground>
-    <Text dangerouslySetInnerHTML={parse}></Text>
+    <SmallText text={props.content}></SmallText>
   </Wrapper>
 
   )
