@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { HeadlineTwo } from '../atoms/headline';
 import { SmItalicText, SmallText } from '../atoms/text';
 
-const RoleDateWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  margin-bottom: 15px;
+  flex-wrap: wrap;
+  margin 15px 0;
 `
 
 const Job = styled.div`
@@ -15,10 +16,11 @@ const Job = styled.div`
 
 const JobCard = (props) => (<Job key={props.company}>
   <HeadlineTwo content={props.company}></HeadlineTwo>
-  <RoleDateWrapper>
+  <Wrapper>
    <SmallText text={props.role} highlight></SmallText>
    <SmItalicText text={props.date} highlight></SmItalicText>
-  </RoleDateWrapper>
+  </Wrapper>
   <SmallText text={props.responsiblites}/>
+  <Wrapper>{props.tools.map(tool => <SmallText text={tool}/>)}</Wrapper>
 </Job>)
 export default JobCard;
