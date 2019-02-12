@@ -8,15 +8,16 @@ const SkillsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 80%;
-  margin: 0 auto;
+  margin: 30px auto 0;
+  padding-bottom: 50px;
   justify-content: center;
 `
 
 
 const FluidImg = styled.div`
-  height: 60px;
-  width: 60px;
-  margin: 20px 10px;
+  height: 50px;
+  width: 50px;
+  margin: 10px 10px;
 `
 
 const SkillImages = () => {
