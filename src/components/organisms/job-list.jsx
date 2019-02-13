@@ -34,9 +34,9 @@ const JobList = () => (<StaticQuery
     `}
     render={data => (<CardViewBox>
       <List>
-        {data.site.siteMetadata.work.jobs.map(job => {
+        {data.site.siteMetadata.work.jobs.map((job,i) => {
           return (
-            <JobCard {...job} />
+            <JobCard {...job} key={i}/>
           )
         })}
       </List>

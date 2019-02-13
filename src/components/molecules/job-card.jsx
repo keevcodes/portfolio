@@ -14,13 +14,13 @@ const Job = styled.div`
   padding: 0 50px;
 `
 
-const JobCard = (props) => (<Job key={props.company}>
+const JobCard = (props) => <Job>
   <HeadlineTwo content={props.company}></HeadlineTwo>
   <Wrapper>
    <SmallText text={props.role} highlight></SmallText>
    <SmItalicText text={props.date} highlight></SmItalicText>
   </Wrapper>
   <SmallText text={props.responsiblites}/>
-  <Wrapper>{props.tools.map(tool => <SmallText text={tool}/>)}</Wrapper>
-</Job>)
+  <Wrapper>{props.tools.map(tool => <SmallText text={tool} key={tool}/>)}</Wrapper>
+</Job>
 export default JobCard;
