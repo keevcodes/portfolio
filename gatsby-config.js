@@ -8,12 +8,12 @@ module.exports = {
       {title: 'contact', route: '/contact/'}
     ],
     home: {
-      desc: "Creative web developer based in Hamburg, Germany. I have experience working with brands such as Google, BMW and Adobe. Have a loog around to learn more about me and my talents.",
+      desc: "Creative web developer based in Hamburg, Germany. I have experience working with brands such as Google, BMW and Adobe. Have a look around to learn more about me and my talents.",
       headline: "Keeve.me"
     },
     about: {
       headline: "About & Skills",
-      desc: "I'm Andrew McKeever a web developer orignally from the United States, currently working in Hamburg.  I began my development journey at the start of 2016 and have been honing my skill set working for big name clients like Adobe, BMW and Google. I'm passionate about front-end and growing with my team of developers and designers to create beautiful websites. Web development is an ever evolving and fast moving industry which fuels my desire to learn new technologies and experiement with interesting tools. My knowledge and tool set not only includes a solid foundation of HTML, CSS and Javascript, but also some of the latest tools like React, Redux, Webpack and GraphQl.  When not building web pages, I spend my time with my wife Ingrid, my daughter Isabella and my dog Baloo. I enjoy staying active in with boxing, snowboarding and when the weather permits, a good braai in the park."
+      desc: "My web engineering journey began at the start of 2016 and have been honing my skill set ever since, working for big name clients like Adobe, BMW and Google. I'm passionate about front-end and growing with my team of developers and designers to create beautiful websites. Web development is an ever evolving and fast moving industry which fuels my desire to learn new technologies and experiement with interesting tools. My knowledge and tool set not only includes a solid foundation of HTML, CSS and Javascript, but also some of the latest tools like React, Redux, Webpack and GraphQl.  When not building web pages, I spend my time with my wife Ingrid, my daughter Isabella and my dog Baloo. I enjoy staying active in with boxing, snowboarding and when the weather permits, a good braai in the park."
     },
     work: {
       desc: "",
@@ -74,6 +74,13 @@ module.exports = {
       options: {
         name: "skills",
         path: `${__dirname}/src/assets/skills/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "project-images",
+        path: `${__dirname}/src/assets/project-images/`,
       },
     },
     `gatsby-transformer-remark`,
