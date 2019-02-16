@@ -15,7 +15,22 @@ const SmItalic = styled(Small)`
   border-left: 1px solid #fff;
 `
 
+const SmDark = styled(Small)`
+  color: #000;
+`
+
+const SmDarkItalic = styled(SmItalic)`
+  color: #000;
+  border-left: none;
+  padding: 10px 0;
+`
+
 
 export const SmallText = (props) => <Small highlight={props.highlight}>{props.text}</Small>
 
 export const SmItalicText = (props) => <SmItalic highlight={props.highlight}>{props.text}</SmItalic>
+
+export const SmDarkText = (props) => <SmDark>{props.text}</SmDark>
+
+export const SmDarkItalicText = (props) => <SmDarkItalic >{props.text}</SmDarkItalic>
+

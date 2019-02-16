@@ -29,17 +29,12 @@ const SkillImages = () => {
         edges {
           node {
             childImageSharp {
-              fluid(maxWidth: 200) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-              sizes(maxWidth: 200) {
+              sizes(maxWidth: 300) {
+                originalName
                 aspectRatio
                 src
                 srcSet
-                srcSetWebp
                 sizes
-                originalImg
-                originalName
               }
             }
           }
@@ -51,7 +46,7 @@ const SkillImages = () => {
       return (<SkillsWrapper>
         {data.allFile.edges.map(img => {
         return (
-          <FluidImg key={img.node.childImageSharp.sizes.originalName}><Img fluid={img.node.childImageSharp.fluid}/></FluidImg>
+          <FluidImg key={img.node.childImageSharp.sizes.originalName}><Img sizes={img.node.childImageSharp.sizes}/></FluidImg>
         )
       })}
       </SkillsWrapper>

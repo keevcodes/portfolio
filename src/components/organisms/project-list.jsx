@@ -20,21 +20,22 @@ const ProjectList = () => (
   <StaticQuery
   query={graphql`
     query {
-      allFile(filter:{extension:{regex:"/(jpeg|jpg|png)/"}, sourceInstanceName:{eq:"project-images"}}) {
+      allMarkdownRemark {
         edges {
           node {
-            childImageSharp {
-              fluid(maxWidth: 300) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-              sizes(maxWidth: 300) {
-                aspectRatio
-                src
-                srcSet
-                srcSetWebp
-                sizes
-                originalImg
-                originalName
+            frontmatter {
+              title
+              desc
+              link
+              imgPath {
+                childImageSharp {
+                  fluid(maxWidth: 600) {
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                  }
+                }
               }
             }
           }
@@ -45,8 +46,8 @@ const ProjectList = () => (
   render={data => {
     return (<ViewBox>
     <List>
-      {data.allFile.edges.map(img => {
-        return (<ProjectCard {...img.node.childImageSharp.fluid} key={img.node.childImageSharp.sizes.originalName} />)
+      {data.allMarkdownRemark.edges.map(project => {
+        return (<ProjectCard {...project} key={project.node.frontmatter.title} />)
       })}
     </List>
 </ViewBox>)}} />

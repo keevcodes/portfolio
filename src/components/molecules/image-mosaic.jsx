@@ -24,21 +24,21 @@ const ImageMosaic = () => (
         image1: file(relativePath: { eq: "bella_ingy_me.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid
             }
           }
         }
         image2: file(relativePath: { eq: "ingy_me_wedding.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_noBase64
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
         image3: file(relativePath: { eq: "me_ingy_baloo.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 250) {
-              ...GatsbyImageSharpFluid_noBase64
+            fluid(maxWidth: 480) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

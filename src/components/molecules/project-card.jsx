@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 
-import { SmallText } from '../atoms/text';
+import { SmDarkText, SmDarkItalicText } from '../atoms/text';
 
 const Project = styled.li`
   margin: 20px;
@@ -14,7 +14,11 @@ const Project = styled.li`
 `
 
 const ProjectCard = (props) => {
-  return(<Project><Img fluid={props} /></Project>)
+  return(<Project>
+    <Img fluid={props.node.frontmatter.imgPath.childImageSharp.fluid} />
+    <SmDarkItalicText text={props.node.frontmatter.title} />
+    <SmDarkText text={props.node.frontmatter.desc} />
+  </Project>)
 }
 
 export default ProjectCard;
