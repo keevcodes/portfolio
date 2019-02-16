@@ -4,14 +4,23 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 
 import Description from '../components/molecules/description';
+import ProjectList from '../components/organisms/project-list';
 import JobList from '../components/organisms/job-list';
 
 const JobContent = styled.div`
-  width: 50%;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 `
 
 const ProjectContent = styled.div`
-  width: 50%;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
 `
 
 
@@ -34,7 +43,9 @@ export default () => (
         <Description headline={data.site.siteMetadata.work.headline} content=""></Description>
         <JobList />
       </JobContent>
-      <ProjectContent></ProjectContent>
+      <ProjectContent>
+        <ProjectList />
+      </ProjectContent>
     </Layout>
     )} />
 )

@@ -35,17 +35,26 @@ module.exports = {
         tools: ['HTML', 'CSS', 'Adobe Campaign', 'Email Templating', 'Photoshop']
       }
     ]
-    },
-    contact: {
-      desc: "",
-      headline: "Contact.me"
-    }
+  },
+  contact: {
+    desc: "",
+    headline: "Contact.me"
+  }
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-offline',
-    'gatsby-plugin-stylelint',
-    'gatsby-plugin-styled-components',
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+
+    // relative string paths directly from siteMetaData are not yet supported by gatsbyImage,
+    // therefore projects were created as md files to include their images
+    // and assocaited data since gatsby knowns the location of the assoicated file paths with gatsby-source-filesystem.
+    // more info on this issue can be found here https://github.com/gatsbyjs/gatsby/issues/2968
+      options: {
+        name: "projects",
+        path: `${__dirname}/src/projects/`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -76,16 +85,12 @@ module.exports = {
         path: `${__dirname}/src/assets/skills/`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "project-images",
-        path: `${__dirname}/src/assets/project-images/`,
-      },
-    },
-    `gatsby-transformer-remark`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-stylelint',
+    'gatsby-plugin-styled-components',
+    `gatsby-transformer-sharp`,
     "gatsby-source-instance-name-for-remark",
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`
   ],
 }
