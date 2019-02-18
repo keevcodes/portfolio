@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 
 const Job = styled.div`
   width: 100%;
-  padding: 0 50px;
+  padding: 0 10px;
 `
 
 const JobCard = (props) => <Job>

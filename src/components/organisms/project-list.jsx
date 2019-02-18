@@ -11,9 +11,10 @@ const ViewBox  = styled.div`
 
 const List = styled.ul`
   display: flex;
+  margin: 0;
   list-style: none;
   width: auto;
-  min-width: 115%;
+  min-width: 200%;
 `
 
 const ProjectList = () => (

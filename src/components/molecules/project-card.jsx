@@ -16,7 +16,7 @@ const Project = styled.li`
 
 const CTA = styled.a`
   display: inline-block;
-  max-width: 50%;
+  max-width: 60%;
   border-radius: 5px;
   border: 1px solid ${props => props.theme.shinyshamrock};
   color: ${props => props.theme.shinyshamrock};

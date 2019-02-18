@@ -11,6 +11,7 @@ const CardViewBox = styled.div`
 
 const List = styled.ul`
   width: 200%;
+  margin: 0;
   list-style: none;
   display: flex;
 `

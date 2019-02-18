@@ -4,8 +4,7 @@ module.exports = {
     navigation: [
       {title: 'home', route: '/'},
       {title: 'about', route: '/about/'},
-      {title: 'work', route: '/work/'},
-      {title: 'contact', route: '/contact/'}
+      {title: 'work', route: '/work/'}
     ],
     home: {
       desc: "Creative web developer based in Hamburg, Germany. I have experience working with brands such as Google, BMW and Adobe. Have a look around to learn more about me and my talents.",

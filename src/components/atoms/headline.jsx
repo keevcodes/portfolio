@@ -7,7 +7,7 @@ const H1 = styled.h1`
   color: white;
 
   @media screen and (min-width: 768px) {
-    font-size: 72px;
+    font-size: 65px;
   }
 `
 
