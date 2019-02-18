@@ -5,12 +5,12 @@ import Img from 'gatsby-image';
 
 import { SmDarkText, SmDarkItalicText } from '../atoms/text';
 
-const Project = styled.li`
+const Project = styled.div`
   margin: 20px;
   padding: 35px 25px;
   box-shadow: 5px 4px 25px 5px rgba(0, 0, 0, 0.5);
   background-color: #fff;
-  width: 45%;
+  width: 90%;
   border-radius: 10px;
 `
 
@@ -27,12 +27,14 @@ const CTA = styled.a`
 `
 
 const ProjectCard = (props) => {
-  return(<Project>
+  return(
+  <Project>
     <Img fluid={props.node.frontmatter.imgPath.childImageSharp.fluid} />
     <SmDarkItalicText text={props.node.frontmatter.title} />
     <SmDarkText text={props.node.frontmatter.desc} />
     <CTA href={props.node.frontmatter.link}>To Site</CTA>
-  </Project>)
+  </Project>
+  )
 }
 
 export default ProjectCard;
