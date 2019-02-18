@@ -11,6 +11,19 @@ const Project = styled.li`
   box-shadow: 5px 4px 25px 5px rgba(0, 0, 0, 0.5);
   background-color: #fff;
   width: 45%;
+  border-radius: 10px;
+`
+
+const CTA = styled.a`
+  display: inline-block;
+  max-width: 50%;
+  border-radius: 5px;
+  border: 1px solid ${props => props.theme.shinyshamrock};
+  color: ${props => props.theme.shinyshamrock};
+  font-family: 'Lato', 'sans-serif';
+  text-decoration: none;
+  padding: 5px 20px;
+  margin-top: 15px;
 `
 
 const ProjectCard = (props) => {
@@ -18,6 +31,7 @@ const ProjectCard = (props) => {
     <Img fluid={props.node.frontmatter.imgPath.childImageSharp.fluid} />
     <SmDarkItalicText text={props.node.frontmatter.title} />
     <SmDarkText text={props.node.frontmatter.desc} />
+    <CTA href={props.node.frontmatter.link}>To Site</CTA>
   </Project>)
 }
 
