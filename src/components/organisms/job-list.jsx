@@ -4,16 +4,11 @@ import styled from 'styled-components';
 import JobCard from '../molecules/job-card';
 import { StaticQuery,  graphql } from 'gatsby';
 
-const CardViewBox = styled.div`
-  width: 100%;
-  overflow: scroll;
-`
 
 const List = styled.ul`
-  width: 200%;
+  width: 100%;
   margin: 0;
   list-style: none;
-  display: flex;
 `
 
 const JobList = () => (<StaticQuery
@@ -34,16 +29,14 @@ const JobList = () => (<StaticQuery
         }
       }
     `}
-    render={data => (<CardViewBox>
-      <List>
-        {data.site.siteMetadata.work.jobs.map((job,i) => {
+    render={data => (
+    <List>
+      {data.site.siteMetadata.work.jobs.map((job,i) => {
           return (
             <JobCard {...job} key={i}/>
           )
         })}
-      </List>
-    </CardViewBox>
-    )}
+    </List>)}
 />)
 
 export default JobList;
