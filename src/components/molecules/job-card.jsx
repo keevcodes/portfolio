@@ -6,12 +6,13 @@ import { SmItalicText, SmallText } from '../atoms/text';
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin 15px 0;
+  margin 8px 0;
 `
 
 const Job = styled.div`
   width: 100%;
   padding: 0 10px;
+  margin-bottom: 45px;
 `
 
 const JobCard = (props) => <Job>

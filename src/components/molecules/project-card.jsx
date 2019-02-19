@@ -32,7 +32,7 @@ const ProjectCard = (props) => {
     <Img fluid={props.node.frontmatter.imgPath.childImageSharp.fluid} />
     <SmDarkItalicText text={props.node.frontmatter.title} />
     <SmDarkText text={props.node.frontmatter.desc} />
-    <CTA href={props.node.frontmatter.link}>To Site</CTA>
+    <CTA href={props.node.frontmatter.link}>Visit</CTA>
   </Project>
   )
 }
