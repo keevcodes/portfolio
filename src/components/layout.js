@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import styled, {ThemeProvider} from 'styled-components';
 
 import Navigation from './molecules/navigation';
+import Footer from './molecules/footer';
 import defaultTheme from '../assets/defaultTheme';
 
 import './layout.css'
@@ -47,6 +48,7 @@ const Layout = ({children}) => {
     <Content>
       {children}
     </Content>
+    <Footer />
   </Container>
   </ThemeProvider>)
 }
