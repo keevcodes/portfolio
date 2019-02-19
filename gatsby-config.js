@@ -6,6 +6,13 @@ module.exports = {
       {title: 'about', route: '/about/'},
       {title: 'work', route: '/work/'}
     ],
+    footer: [
+      {icon: 'linkedin', link: ''},
+      {icon: 'twitter', link: ''},
+      {icon: 'xing', link: 'https://www.xing.com/profile/Andrew_McKeever/cv'},
+      {icon: 'github', link: 'https://github.com/keevkeev'},
+      {icon: 'gmail', link: 'mailto:andmckvr@gmail.com'}
+    ],
     home: {
       desc: "Creative web developer based in Hamburg, Germany. I have experience working with brands such as Google, BMW and Adobe. Have a look around to learn more about me and my talents.",
       headline: "Keeve.me"
