@@ -11,16 +11,21 @@ const FooterList = styled.ul`
 `
 
 const FooterItem = styled.li`
-  color: ${props => props.theme.greenSmoke};
+  color: #fff;
   font-size: 22px;
-  padding: 5px 15px;
+  padding: 5px 25px;
+  transform: scale(1);
+  transition: color 0.3s ease, transform 0.3s ease;
 
   &:hover {
     cursor: pointer;
+    color: ${props => props.theme.greenSmoke};
+    transform: scale(1.2);
+    transition: color 0.3s ease, transform 0.3s ease;
   }
 
   &:first-of-type {
-    padding: 5px 15px 0 0;
+    padding: 5px 25px 0 0;
   }
 `
 
