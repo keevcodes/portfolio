@@ -18,6 +18,20 @@ const H2 = styled.h2`
   color: white;
 `
 
+const PostHl = styled(H2)`
+  color: ${props => props.theme.greenSmoke};
+  font-size: 45px;
+`
+
+const BlogHl = styled(H1)`
+  color: ${props => props.theme.space};
+  margin: 0 auto;
+`
+
 export const Headline = (props) => <H1>{props.content}</H1>
 
 export const HeadlineTwo = (props) => <H2>{props.content}</H2>
+
+export const PostHeadline = (props) => <PostHl>{props.content}</PostHl>
+
+export const BlogHeadline = (props) => <BlogHl>{props.content}</BlogHl>
