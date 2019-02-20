@@ -4,7 +4,8 @@ module.exports = {
     navigation: [
       {title: 'home', route: '/'},
       {title: 'about', route: '/about/'},
-      {title: 'work', route: '/work/'}
+      {title: 'work', route: '/work/'},
+      {title: 'blog', route: '/blog/'}
     ],
     footer: [
       {icon: 'linkedin', link: ''},
@@ -73,8 +74,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages/posts`,
-        name: "markdown-pages",
+        name: "blog-posts",
+        path: `${__dirname}/src/pages/posts/`,
       },
     },
     {
