@@ -69,9 +69,9 @@ const ImageMosaic = () => (
     render={data => {
       return (
         <ImageMosaicWrapper>
-          <Img fluid={data.image2.childImageSharp.fluid} style={{ gridColumn: '3/10', gridRow: '1/10' }}/>
-          <Img fluid={data.image1.childImageSharp.fluid} style={{ gridColumn: '1/7', gridRow: '5/9', boxShadow: 'rgba(35, 37, 22, 0.6) 8px -2px 20px 2px'}}/>
-          <Img fluid={data.image3.childImageSharp.fluid} style={{ gridColumn: '6/-1', gridRow: '7 / -1', boxShadow: 'rgba(35,37,22, 0.6) -5px -5px 15px 2px' }}/>
+          <Img fluid={data.image2.childImageSharp.fluid} style={{ gridColumn: '3/10', gridRow: '1/10'}}/>
+          <Img fluid={data.image1.childImageSharp.fluid} style={{ gridColumn: '1/7', gridRow: '5/9', boxShadow:  '5px 10px 35px 5px rgba(0, 0, 0, 0.3'}}/>
+          <Img fluid={data.image3.childImageSharp.fluid} style={{ gridColumn: '6/-1', gridRow: '7 / -1', marginRight: '-30px', boxShadow:  '5px 10px 35px 5px rgba(0, 0, 0, 0.3'}}/>
         </ImageMosaicWrapper>
     )}} />)
 
