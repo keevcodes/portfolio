@@ -9,7 +9,7 @@ const ProjectList = () => (
   <StaticQuery
   query={graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(filter: {frontmatter: {category: {eq: "project"}}}) {
         edges {
           node {
             frontmatter {
@@ -19,9 +19,9 @@ const ProjectList = () => (
               imgPath {
                 childImageSharp {
                   fluid(maxWidth: 300) {
-                    aspectRatio
                     src
                     srcSet
+                    aspectRatio
                     sizes
                   }
                 }
