@@ -7,6 +7,7 @@ import Dots from '../components/atoms/dots';
 import Description from '../components/molecules/description';
 
 import {StaticQuery,  graphql } from 'gatsby';
+import { PageInfo } from '../data/pageInfoFragment';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -20,17 +21,13 @@ export default () => {
       allPageDataJson(filter: {page: {title: {eq: "home"}}}) {
         edges {
           node {
-            page {
-              headline
-              desc
-            }
+            ...PageInfo
           }
         }
       }
     }
   `}
     render={data => {
-      console.log(data)
       return (<Layout>
         <Description headline={data.allPageDataJson.edges[0].node.page.headline} content={data.allPageDataJson.edges[0].node.page.desc}></Description>
         <HomeIcon width="50%" height="70%" />

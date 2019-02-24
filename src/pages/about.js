@@ -23,10 +23,7 @@ export default () => (
       allPageDataJson(filter: {page: {title: {eq: "about"}}}) {
         edges {
           node {
-            page {
-              headline
-              desc
-            }
+            ...PageInfo
           }
         }
       }
