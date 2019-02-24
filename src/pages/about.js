@@ -19,20 +19,22 @@ const InfoContainer = styled.div`
 export default () => (
   <StaticQuery
     query={graphql`
-      query {
-        site {
-          siteMetadata {
-            about {
-              desc
+    query {
+      allPageDataJson(filter: {page: {title: {eq: "about"}}}) {
+        edges {
+          node {
+            page {
               headline
+              desc
             }
           }
         }
+      }
     }`}
     render={data => (
     <Layout>
       <InfoContainer>
-        <Description headline={data.site.siteMetadata.about.headline} content={data.site.siteMetadata.about.desc} />
+        <Description headline={data.allPageDataJson.edges[0].node.page.headline} content={data.allPageDataJson.edges[0].node.page.desc} />
         <SkillImages />
       </InfoContainer>
       <ImageMosaic />

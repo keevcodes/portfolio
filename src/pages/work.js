@@ -28,11 +28,12 @@ export default () => (
   <StaticQuery
     query={graphql`
       query {
-        site {
-          siteMetadata {
-            work {
-              desc
-              headline
+        allPageDataJson(filter: {page: {title: {eq: "work"}}}) {
+          edges {
+            node {
+              page {
+                headline
+              }
             }
           }
         }
@@ -40,7 +41,7 @@ export default () => (
     render={data => (
     <Layout>
       <JobContent>
-        <Description headline={data.site.siteMetadata.work.headline} content=""></Description>
+        <Description headline={data.allPageDataJson.edges[0].node.page.headline} content=""></Description>
         <JobList />
       </JobContent>
       <ProjectContent>

@@ -9,22 +9,15 @@ const ProjectList = () => (
   <StaticQuery
   query={graphql`
     query {
-      allMarkdownRemark(filter: {frontmatter: {category: {eq: "project"}}}) {
+      allPageDataJson(filter: {page: {title: {eq:"work"}}}) {
         edges {
           node {
-            frontmatter {
-              title
-              desc
-              link
-              imgPath {
-                childImageSharp {
-                  fluid(maxWidth: 300) {
-                    src
-                    srcSet
-                    aspectRatio
-                    sizes
-                  }
-                }
+            page {
+              projects {
+                title
+                desc
+                imgPath
+                link
               }
             }
           }
@@ -50,8 +43,8 @@ const ProjectList = () => (
     };
     return (
     <Slider {...settings}>
-      {data.allMarkdownRemark.edges.map(project => {
-        return (<ProjectCard {...project} key={project.node.frontmatter.title} />)
+      {data.allPageDataJson.edges[0].node.page.projects.map(project => {
+        return (<ProjectCard {...project} key={project.title} />)
       })}
     </Slider>)}} />
 )

@@ -14,15 +14,17 @@ const List = styled.ul`
 const JobList = () => (<StaticQuery
     query={graphql`
       query {
-        site {
-          siteMetadata {
-            work {
-              jobs {
-                company
-                role
-                date
-                responsiblites
-                tools
+        allPageDataJson(filter: {page: {title: {eq: "work"}}}) {
+          edges {
+            node {
+              page {
+                jobs {
+                  company
+                  role
+                  date
+                  responsiblites
+                  tools
+                }
               }
             }
           }
@@ -31,7 +33,7 @@ const JobList = () => (<StaticQuery
     `}
     render={data => (
     <List>
-      {data.site.siteMetadata.work.jobs.map((job,i) => {
+      {data.allPageDataJson.edges[0].node.page.jobs.map((job,i) => {
           return (
             <JobCard {...job} key={i}/>
           )
