@@ -29,10 +29,10 @@ const ProjectCard = (props) => {
   console.log(props)
   return(
   <Project>
-    {/* <Img fluid={props.imgPath.childImageSharp.fluid} /> */}
-    <SmDarkItalicText text={props.title} />
-    <SmDarkText text={props.desc} />
-    <CTA href={props.link}>Visit</CTA>
+    <Img fluid={props.node.frontmatter.imgPath.childImageSharp.fluid} />
+    <SmDarkItalicText text={props.node.frontmatter.title} />
+    <SmDarkText text={props.node.frontmatter.desc} />
+    <CTA href={props.node.frontmatter.link}>Visit</CTA>
   </Project>
   )
 }

@@ -35,12 +35,12 @@
         {
           "title": "amp.dev",
           "desc": "The all new home page for the AMP web component framwork by Google",
-          "imgPath": "./amp.dev.png",
+          "imgPath": "src/assets/project-images/amp.dev.png",
           "link": "https://amp.dev/"
         }, {
           "title": "bilder.de",
           "desc": "Customize photos with the configurator (built with React) that can be used on a variety of prducts.",
-          "imgPath": "./bilder.de.png",
+          "imgPath": "src/assets/project-images/bilder.de.png",
           "link": "https://www.bilder.de/"
         }
       ]

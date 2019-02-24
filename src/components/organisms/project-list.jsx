@@ -3,21 +3,29 @@ import styled from 'styled-components';
 
 import ProjectCard from '../molecules/project-card';
 import Slider from 'react-slick';
+
 import { StaticQuery,  graphql } from 'gatsby';
 
 const ProjectList = () => (
   <StaticQuery
   query={graphql`
     query {
-      allPageDataJson(filter: {page: {title: {eq:"work"}}}) {
+      allMarkdownRemark(filter: {frontmatter: {category: {eq: "project"}}}) {
         edges {
           node {
-            page {
-              projects {
-                title
-                desc
-                imgPath
-                link
+            frontmatter {
+              title
+              desc
+              link
+              imgPath {
+                childImageSharp {
+                  fluid(maxWidth: 300) {
+                    src
+                    srcSet
+                    aspectRatio
+                    sizes
+                  }
+                }
               }
             }
           }
@@ -43,8 +51,8 @@ const ProjectList = () => (
     };
     return (
     <Slider {...settings}>
-      {data.allPageDataJson.edges[0].node.page.projects.map(project => {
-        return (<ProjectCard {...project} key={project.title} />)
+      {data.allMarkdownRemark.edges.map(project => {
+        return (<ProjectCard {...project} key={project.node.frontmatter.title} />)
       })}
     </Slider>)}} />
 )

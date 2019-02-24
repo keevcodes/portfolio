@@ -61,6 +61,16 @@ module.exports = {
         path: `${__dirname}/src/assets/project-images/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+     // relative string paths not yet supported by gatsbyImage and variables can not be used in static queries,
+    // therefore projects were created as md files to include their images
+    // and assocaited data since gatsby knowns the location of the assoicated file paths with gatsby-source-filesystem.
+    // more info on this issue can be found here https://github.com/gatsbyjs/gatsby/issues/2968
+      options: {
+        name: "projects",
+        path: `${__dirname}/src/projects/`}
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
     'gatsby-plugin-stylelint',
