@@ -12,9 +12,7 @@ const defaultTheme = {
   lighterBlack: '#232526',
   darkGrey: '#414345',
   lightGrey: '#9b9999',
-  /* font colors */
-
-  iron: '#D5D7D8'
+  white: '#fff'
 
 }
 
