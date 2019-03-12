@@ -24,7 +24,7 @@ const PostHl = styled(H2)`
 `
 
 const BlogHl = styled(H1)`
-  color: ${props => props.theme.space};
+  color: ${props => props.theme.purple};
   margin: 0 auto;
 `
 
