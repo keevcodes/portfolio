@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   display: block;
   width: auto;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 50px auto 0;
   padding: 0 20px;
 `
 const Header = styled.div`
@@ -43,10 +43,10 @@ export default ({ data }) => {
     <Helmet title="Keeve.me Blog" />
     <Wrapper>
     <Header>
-      <Link to="/" style={{textDecoration: 'none', padding: '0 20px;'}}>
+      <Link to="/" style={{textDecoration: 'none', padding: '0 20px'}}>
         <SmDarkText text="Home" />
       </Link>
-      <BlogHeadline content="Keeve.me/Blog"/>
+      <BlogHeadline content="Keevechain"/>
     </Header>
       {posts.filter(post => post.node.excerpt != "").map(({node: post}) => {
         return (<PostContent key={post.frontmatter.title}>
