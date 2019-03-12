@@ -15,6 +15,7 @@ const Main = styled.main`
   width: 100%;
   max-width: 750px;
   margin: 100px auto;
+  padding: 0 20px;
   border-bottom: 1px solid ${props => props.theme.greenSmoke};
 
   .blog-post-content {
