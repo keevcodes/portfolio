@@ -5,24 +5,81 @@
 
 
 import React from 'react';
-import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
+import styled, {ThemeProvider} from 'styled-components';
+
+import defaultTheme from '../assets/defaultTheme';
+import { BlogHeadline } from '../components/atoms/headline';
+
+const Main = styled.main`
+  width: 100%;
+  max-width: 750px;
+  margin: 100px auto;
+  border-bottom: 1px solid ${props => props.theme.greenSmoke};
+
+  .blog-post-content {
+
+    & > p {
+      font-family: 'Lato', 'sans-serif';
+      font-size: 24px;
+      line-height: 42px;
+      margin: 50px 0;
+    }
+
+    & a {
+      color: ${props => props.theme.shinyshamrock};
+    }
+  }
+`
+const PostInfoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Lato', 'sans-serif';
+  color: ${props => props.theme.shinyshamrock}
+`
+
+const PostInfo = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+`
+const PostInfoDate = styled(PostInfo)`
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    left: -2px;
+    background: ${props => props.theme.purple};
+  }
+
+`
+
 
 export default ({ data }) => {
 
   const { markdownRemark: post } = data
-  return (
-    <div>
-      <Helmet title={`${post.frontmatter.title}`} />
-      <div className="blog-post">
-        <h1>{post.frontmatter.title}</h1>
+  return (<ThemeProvider theme={defaultTheme}>
+   <Main>
+      <article>
+        <BlogHeadline content={post.frontmatter.title}></BlogHeadline>
+        <PostInfoWrapper>
+          <PostInfo>{post.frontmatter.readTime} min read</PostInfo>
+          <PostInfoDate> {post.frontmatter.date} </PostInfoDate>
+        </PostInfoWrapper>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-      </div>
-    </div>
-  )
+      </article>
+    </Main>
+  </ThemeProvider>)
 }
 
 export const pageQuery = graphql`
@@ -33,6 +90,7 @@ export const pageQuery = graphql`
         date
         path
         title
+        readTime
       }
     }
   }

@@ -4,7 +4,6 @@ const defaultTheme = {
 
   greenSmoke: '#98B06F',
   purple: '#442B48',
-  space: '#12112C',
   yellowGreen: '#B6DC76',
   honeysuckle: '#DBFF76',
   shinyshamrock: '#5BBA6F',
