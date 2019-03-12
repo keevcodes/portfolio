@@ -1,0 +1,17 @@
+---
+date: March 12, 2019
+readTime: 10
+category: "blog"
+path: "/blog/welcome"
+title: "Kicking things off...Why?"
+---
+
+Starting things off, I'm Andrew McKeever a web developer working in Germany orginating from the US. After completing a B.S. in Pyschology from Iowa State University, I spent a couple years in South Korea teaching English. It was there that I met my beautiful wife Ingrid; she would eventually convice me (with very little twisiting of my arm required) to move to Hamburg. After spending a few years continuing to teach English, I began my programming journey. Going professional took nearly a year of self teaching and quite a bit of luck, but I'll save that story for another post. So, with all the introduction out of the way let's get to the main focus of this post, "Why a private blog, Why Gatsby, Why why why?"
+
+"Why a private blog?, it's like totally 2019 man and Medium exists". This is true, but Medium is a scary place where everyone will actually read what im writing. Jokes, but truthfully a large part of my decision for my own blog was so that I could comfortably imporve my writing with the hopes that if I ever do reach the coveted "Instert your favorite developer with a podcast/blog here" level status, I'll be at least mildly decent at it. <a href="https://mobile.twitter.com/dan_abramov">Dan Abramov</a> also made a mention of why he moved from Medium to private, reasoning that Medium is a more "forever" platform due to its sheer communtiy size; creating difficulty to write on topics when his opinion (like any normal, intelligent human's would) changed. A personal blog gives you complete control of it's content and since I'm constantly learning and trying to improve, I'd like to avoid a lynch mob coming for me everytime I'm wrong or missing a few details. This blog's purpose is for me to grow, and growth requires making mistakes and learning from them.
+
+
+"Why Gatsby?! React is overkill for a static portfolio and blog? Everything is being written in React and it's making me <i>fuchsteufelswild</i>". Well, as much as I love React, and even more so building with Gatsby, I'm right there with ya. Gatsby was a bit much for this project, but I decided to build with it because Gatsby's demand is increasing and in my opinion, the number one of a good developer is to be able to adapt. It's true new tech comes and goes, and one day the <b>"all things React"</b> hype train will slow way down, but the market demand is there now, and just like with Jquery, Wordpress and <i>*gasp*</i> Php, there will be remain some demand to maintain projects in React and its ecosystem. I've learned in my short career as a developer, that you can get caught up in the madness of how to build and structure a project to the point where you never even get started. This desire to do it the best way can help you improve greatly, but it can also hinder you if you're constantly second guessing yourself. It's great to explore options, but sometimes the best option is to just start the damn thing. Also, it's my project and I'll do what I want...deal with it.
+
+
+Alright, so that wraps up the first post, hopefully you enjoyed getting to know me a bit more. If not feel free to <a href="">yell at me on twitter</a>
