@@ -6,10 +6,12 @@
 
 import React from 'react';
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 import styled, {ThemeProvider} from 'styled-components';
 
 import defaultTheme from '../assets/defaultTheme';
 import { BlogHeadline } from '../components/atoms/headline';
+import ProjectList from '../components/organisms/project-list';
 
 const Main = styled.main`
   width: 100%;
@@ -67,6 +69,11 @@ export default ({ data }) => {
 
   const { markdownRemark: post } = data
   return (<ThemeProvider theme={defaultTheme}>
+  <>
+  <Helmet>
+    <title>Keeve.me Blog / {post.frontmatter.title }</title>
+    <meta name="description" content={post.frontmatter.description}></meta>
+  </Helmet>
    <Main>
       <article>
         <BlogHeadline content={post.frontmatter.title}></BlogHeadline>
@@ -80,6 +87,7 @@ export default ({ data }) => {
         />
       </article>
     </Main>
+  </>
   </ThemeProvider>)
 }
 
@@ -92,6 +100,7 @@ export const pageQuery = graphql`
         path
         title
         readTime
+        description
       }
     }
   }

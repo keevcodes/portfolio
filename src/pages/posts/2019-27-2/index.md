@@ -4,6 +4,7 @@ readTime: 10
 category: "blog"
 path: "/blog/welcome"
 title: "Kicking things off...Why?"
+description: "Why I chose to create a blog"
 ---
 
 Starting things off, I'm Andrew McKeever a web developer working in Germany orginating from the US. After completing a B.S. in Pyschology from Iowa State University, I spent a couple years in South Korea teaching English. It was there that I met my beautiful wife Ingrid; she would eventually convice me (with very little twisiting of my arm required) to move to Hamburg. After spending a few years continuing to teach English, I began my programming journey. Going professional took nearly a year of self teaching and quite a bit of luck, but I'll save that story for another post. So, with all the introduction out of the way let's get to the main focus of this post, "Why a private blog, Why Gatsby, Why why why?"
