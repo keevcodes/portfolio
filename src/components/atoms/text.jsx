@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Small = styled.p`
   font-family: 'Lato', 'sans-serif';
-  font-size: 18px;
+  font-size: 16px;
   color: ${props => props.highlight ? props.theme.greenSmoke : '#fff'};
   margin-bottom: 0;
   padding: 0 7.5px;
@@ -17,6 +17,7 @@ const SmItalic = styled(Small)`
 
 const SmDark = styled(Small)`
   color: #000;
+  padding: 0;
 `
 
 const SmDarkItalic = styled(SmItalic)`
@@ -33,4 +34,3 @@ export const SmItalicText = (props) => <SmItalic highlight={props.highlight}>{pr
 export const SmDarkText = (props) => <SmDark>{props.text}</SmDark>
 
 export const SmDarkItalicText = (props) => <SmDarkItalic >{props.text}</SmDarkItalic>
-

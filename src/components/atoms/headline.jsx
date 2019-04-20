@@ -19,12 +19,12 @@ const H2 = styled.h2`
 `
 
 const PostHl = styled(H2)`
-  color: ${props => props.theme.greenSmoke};
+  color: ${props => props.theme.purple};
   font-size: 45px;
 `
 
 const BlogHl = styled(H1)`
-  color: ${props => props.theme.purple};
+  color: ${props => props.theme.greenSmoke};
   margin: 0 auto;
 `
 
