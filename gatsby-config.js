@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Keeve.me',
+    title: "Andrew McKeever's web devlopement portfolio",
     navigation: [
       {title: 'home', route: '/'},
       {title: 'about', route: '/about/'},
@@ -54,13 +54,7 @@ module.exports = {
         path: `${__dirname}/src/assets/skills/`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "projects",
-        path: `${__dirname}/src/assets/project-images/`,
-      },
-    },
+
     {
       resolve: `gatsby-source-filesystem`,
      // relative string paths not yet supported by gatsbyImage and variables can not be used in static queries,
