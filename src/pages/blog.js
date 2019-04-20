@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 
 import { BlogHeadline, PostHeadline } from '../components/atoms/headline';
-import { SmDarkItalicText, SmDarkText } from '../components/atoms/text';
+import { SmDarkText } from '../components/atoms/text';
 
 import styled, {ThemeProvider}  from 'styled-components';
 import defaultTheme from '../assets/defaultTheme';
@@ -17,8 +17,8 @@ import defaultTheme from '../assets/defaultTheme';
 const Wrapper = styled.div`
   display: block;
   width: auto;
-  max-width: 1280px;
-  margin: 50px auto 0;
+  max-width: 750px;
+  margin: 100px auto;
   padding: 0 20px;
 `
 const Header = styled.div`
@@ -35,26 +35,65 @@ const PostContent = styled.div`
   border-bottom: 1px solid ${props => props.theme.greenSmoke};
 `
 
+const PostInfoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Lato', 'sans-serif';
+  color: ${props => props.theme.shinyshamrock}
+`
+
+const PostInfo = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+`
+const PostInfoDate = styled(PostInfo)`
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    left: -2px;
+    background: ${props => props.theme.purple};
+  }
+
+`
+
 export default ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
 
   return (<ThemeProvider theme={defaultTheme}>
   <>
-    <Helmet title="Keeve.me Blog" />
+    <Helmet>
+      <title>Keeve.me Blog</title>
+      <meta name="description" content="the blog of Andrew McKeever, a web developer in Hamburg Germany"></meta>
+    </Helmet>
     <Wrapper>
     <Header>
-      <Link to="/" style={{textDecoration: 'none', padding: '0 20px'}}>
+      <Link to="/" style={{textDecoration: 'none'}}>
         <SmDarkText text="Home" />
       </Link>
       <BlogHeadline content="Keevechain"/>
     </Header>
       {posts.filter(post => post.node.excerpt != "").map(({node: post}) => {
+        console.log(post)
         return (<PostContent key={post.frontmatter.title}>
           <Link to={post.frontmatter.path} style={{ textDecoration: 'none' }}>
             <PostHeadline content={post.frontmatter.title} />
           </Link>
-          <SmDarkItalicText text={post.frontmatter.date} />
-          <SmDarkText text={post.excerpt}/>
+          <div style={{ padding: '0 20px' }}>
+            <PostInfoWrapper>
+              <PostInfo>{post.frontmatter.readTime} min read</PostInfo>
+              <PostInfoDate>{post.frontmatter.date}</PostInfoDate>
+            </PostInfoWrapper>
+            <SmDarkText text={post.excerpt} />
+          </div>
         </PostContent>)
       })}
     </Wrapper>
@@ -76,6 +115,7 @@ export const pageQuery = graphql`
             title
             date
             path
+            readTime
           }
         }
       }

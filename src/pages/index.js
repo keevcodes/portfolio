@@ -3,7 +3,6 @@ import Layout from '../components/layout';
 import styled from 'styled-components';
 
 import HomeIcon from '../components/atoms/home-icon';
-import Dots from '../components/atoms/dots';
 import Description from '../components/molecules/description';
 
 import {StaticQuery,  graphql } from 'gatsby';
@@ -31,6 +30,6 @@ export default () => {
       return (<Layout>
         <Description headline={data.allPageDataJson.edges[0].node.page.headline} content={data.allPageDataJson.edges[0].node.page.desc}></Description>
         <HomeIcon width="50%" height="70%" />
-    </Layout>)}
+      </Layout>)}
   }/>)
 }

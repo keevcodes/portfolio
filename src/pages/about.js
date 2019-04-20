@@ -28,13 +28,13 @@ export default () => (
         }
       }
     }`}
-    render={data => (
-    <Layout>
-      <InfoContainer>
-        <Description headline={data.allPageDataJson.edges[0].node.page.headline} content={data.allPageDataJson.edges[0].node.page.desc} />
-        <SkillImages />
-      </InfoContainer>
-      <ImageMosaic />
-    </Layout>
-    )} />
+    render={data => (<div>
+        <Layout>
+          <InfoContainer>
+            <Description headline={data.allPageDataJson.edges[0].node.page.headline} content={data.allPageDataJson.edges[0].node.page.desc} />
+            <SkillImages />
+          </InfoContainer>
+          <ImageMosaic />
+        </Layout>
+      </div>)} />
 )
