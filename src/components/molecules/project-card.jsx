@@ -6,11 +6,15 @@ import Img from 'gatsby-image';
 import { SmDarkText, SmDarkItalicText } from '../atoms/text';
 
 const Project = styled.div`
-  margin: 20px;
-  padding: 35px 25px;
+  padding: 5px;
+  margin-bottom: 20px;
   background-color: #fff;
-  width: 90%;
+  width: 95%;
   border-radius: 10px;
+`
+
+const CardDetails = styled.div`
+  padding: 0 0 10px 10px;
 `
 
 const CTA = styled.a`
@@ -25,16 +29,15 @@ const CTA = styled.a`
   margin-top: 15px;
 `
 
-const ProjectCard = (props) => {
-  console.log(props)
-  return(
+const ProjectCard = (props) => (
   <Project>
     <Img fluid={props.node.frontmatter.imgPath.childImageSharp.fluid} />
-    <SmDarkItalicText text={props.node.frontmatter.title} />
-    <SmDarkText text={props.node.frontmatter.desc} />
-    <CTA href={props.node.frontmatter.link}>Visit</CTA>
+    <CardDetails>
+      <SmDarkItalicText text={props.node.frontmatter.title} />
+      <SmDarkText text={props.node.frontmatter.desc} />
+      <CTA href={props.node.frontmatter.link}>Visit</CTA>
+    </CardDetails>
   </Project>
-  )
-}
+)
 
 export default ProjectCard;
