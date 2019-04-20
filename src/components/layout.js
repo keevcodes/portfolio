@@ -13,6 +13,12 @@ const Container = styled.div`
   min-height: 100vh;
   padding-bottom: 50px;
   background: linear-gradient(45deg,#000000,#000000,#414345,#9b9999);
+
+  @media (min-width: 768px) {
+    max-height: 100vh;
+    height: 100vh;
+    padding-bottom: 0;
+  }
 `
 
 const Content = styled.div`
@@ -21,24 +27,19 @@ const Content = styled.div`
   justify-content: space-evenly;
   width: 90vw;
   height: auto;
-  min-height: 85vh;
   margin: 0 auto;
   border: 5px solid rgba(152, 176, 111, 0.1);
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
     align-items: center;
+    height: 80vh;
   }
 `
 const Layout = ({children}) => {
   return (<ThemeProvider theme={defaultTheme}>
   <Container>
-    <Helmet
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    >
+    <Helmet>
       <html lang="en" />
       <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu" rel="stylesheet" />
       <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
