@@ -7,11 +7,11 @@ const bounce = keyframes`
   0% {
     transform: translate3d(0, -1%, 0);
   }
-  
+
   50% {
     transform: translate3d(0, 1%, 0);
   }
-  
+
   100% {
     transform: translate3d(0, -1%, 0);
   }
@@ -26,8 +26,8 @@ const ImageMosaicWrapper = styled.div`
     width: 50%;
     left: 50%;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 75px);
+    grid-template-columns: repeat(11, 4vw);
+    grid-template-rows: repeat(8, 10vh);
   }
 
   & .gatsby-image-wrapper:nth-child(2) {
@@ -52,7 +52,7 @@ const ImageMosaic = () => (
         }
         image2: file(relativePath: { eq: "ingy_me_wedding.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 390) {
+            fluid(maxWidth: 290) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -69,9 +69,9 @@ const ImageMosaic = () => (
     render={data => {
       return (
         <ImageMosaicWrapper>
-          <Img fluid={data.image2.childImageSharp.fluid} style={{ gridColumn: '3/10', gridRow: '1/10'}}/>
-          <Img fluid={data.image1.childImageSharp.fluid} style={{ gridColumn: '1/7', gridRow: '5/9', boxShadow:  '5px 10px 35px 5px rgba(0, 0, 0, 0.3'}}/>
-          <Img fluid={data.image3.childImageSharp.fluid} style={{ gridColumn: '6/-1', gridRow: '7 / -1', marginRight: '-30px', boxShadow:  '5px 10px 35px 5px rgba(0, 0, 0, 0.3'}}/>
+          <Img fluid={data.image2.childImageSharp.fluid} style={{ gridColumn: '5/-1', gridRow: '1/6'}}/>
+          <Img fluid={data.image1.childImageSharp.fluid} style={{ gridColumn: '1/7', gridRow: '4/8', boxShadow:  '5px 10px 35px 5px rgba(0, 0, 0, 0.3'}}/>
+          <Img fluid={data.image3.childImageSharp.fluid} style={{ gridColumn: '6/-1', gridRow: '5 / -1', marginRight: '-30px', boxShadow:  '5px 10px 35px 5px rgba(0, 0, 0, 0.3'}}/>
         </ImageMosaicWrapper>
     )}} />)
 
