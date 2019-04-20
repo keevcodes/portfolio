@@ -1,0 +1,23 @@
+{
+  "footer": [
+    {
+      "icon": "linkedin",
+      "link": ""},
+    {
+      "icon": "twitter",
+      "link": ""
+    },
+    {
+      "icon": "xing",
+      "link": "https://www.xing.com/profile/Andrew_McKeever/cv"
+    },
+    {
+      "icon": "github",
+      "link": "https://github.com/keevkeev"
+    },
+    {
+      "icon": "gmail",
+      "link": "mailto:andmckvr@gmail.com"
+    }
+  ]
+}

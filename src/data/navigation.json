@@ -1,0 +1,21 @@
+
+{
+  "navigation": [
+    {
+      "title": "home",
+      "route": "/"
+    },
+    {
+      "title": "about",
+      "route": "/about/"
+    },
+    {
+      "title": "work",
+      "route": "/work/"
+    },
+    {
+      "title": "blog",
+      "route": "/blog/"
+    }
+  ]
+}
