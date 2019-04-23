@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import ProjectCard from '../molecules/project-card';
 import Slider from 'react-slick';
