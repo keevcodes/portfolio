@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "Andrew McKeever's web devlopement portfolio",
+    // gatsby-transformer-json ext supports only allPageDataJson attr in graphql.
+    // the structure of that data isn't similar enough to place nav and footer data there.
     navigation: [
       {title: 'home', route: '/'},
       {title: 'about', route: '/about/'},
@@ -8,8 +10,8 @@ module.exports = {
       {title: 'blog', route: '/blog/'}
     ],
     footer: [
-      {icon: 'linkedin', link: ''},
-      {icon: 'twitter', link: ''},
+      {icon: 'linkedin', link: 'https://www.linkedin.com/in/andrew-mckeever-01974371/'},
+      {icon: 'twitter', link: 'https://twitter.com/keev_me'},
       {icon: 'xing', link: 'https://www.xing.com/profile/Andrew_McKeever/cv'},
       {icon: 'github', link: 'https://github.com/keevkeev'},
       {icon: 'gmail', link: 'mailto:andmckvr@gmail.com'}
@@ -57,7 +59,7 @@ module.exports = {
 
     {
       resolve: `gatsby-source-filesystem`,
-     // relative string paths not yet supported by gatsbyImage and variables can not be used in static queries,
+    // relative string paths not yet supported by gatsbyImage and variables can not be used in static queries,
     // therefore projects were created as md files to include their images
     // and assocaited data since gatsby knowns the location of the assoicated file paths with gatsby-source-filesystem.
     // more info on this issue can be found here https://github.com/gatsbyjs/gatsby/issues/2968
