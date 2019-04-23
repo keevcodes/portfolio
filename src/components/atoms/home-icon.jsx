@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import ReactVivus from 'react-vivus';
 
 import KiwiBackground from '../../assets/kiwi-background.svg';
 

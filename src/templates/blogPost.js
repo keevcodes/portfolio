@@ -11,7 +11,6 @@ import styled, {ThemeProvider} from 'styled-components';
 
 import defaultTheme from '../assets/defaultTheme';
 import { BlogHeadline } from '../components/atoms/headline';
-import ProjectList from '../components/organisms/project-list';
 
 const Main = styled.main`
   width: 100%;

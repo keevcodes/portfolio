@@ -81,7 +81,7 @@ export default ({ data }) => {
       </Link>
       <BlogHeadline content="Keevechain"/>
     </Header>
-      {posts.filter(post => post.node.excerpt != "").map(({node: post}) => {
+      {posts.filter(post => post.node.excerpt !== "").map(({node: post}) => {
         console.log(post)
         return (<PostContent key={post.frontmatter.title}>
           <Link to={post.frontmatter.path} style={{ textDecoration: 'none' }}>

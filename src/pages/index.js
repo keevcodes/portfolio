@@ -1,17 +1,11 @@
 import React from 'react';
 import Layout from '../components/layout';
-import styled from 'styled-components';
 
 import HomeIcon from '../components/atoms/home-icon';
 import Description from '../components/molecules/description';
 
 import {StaticQuery,  graphql } from 'gatsby';
 import { PageInfo } from '../data/pageInfoFragment';
-
-const Wrapper = styled.div`
-  width: 100%;
-`
-
 
 export default () => {
   return (<StaticQuery
