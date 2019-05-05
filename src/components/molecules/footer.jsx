@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import '../../assets/icons.svg';
 
 import {StaticQuery,  graphql } from 'gatsby';
 
@@ -11,15 +12,21 @@ const FooterList = styled.ul`
 `
 
 const FooterItem = styled.li`
-  color: #fff;
-  font-size: 22px;
+  fill: #fff;
+  height: 3rem;
+  width: 3rem;
   padding: 5px 25px;
   transform: scale(1);
   transition: color 0.3s ease, transform 0.3s ease;
 
+  & svg {
+    height: 100%;
+    width: 100%;
+  }
+
   &:hover {
     cursor: pointer;
-    color: ${props => props.theme.greenSmoke};
+    fill: ${props => props.theme.greenSmoke};
     transform: scale(1.2);
     transition: color 0.3s ease, transform 0.3s ease;
   }
@@ -46,7 +53,9 @@ const Footer = () => (<StaticQuery
     return (<FooterList>
       {data.site.siteMetadata.footer.map(item => {
         return (<a href={item.link} key={item.icon} style={{textDecoration: 'none'}}>
-        <FooterItem className={"zocial-" + item.icon} />
+        <FooterItem>
+          <svg><use xlinkHref={"#icons_" + `${item.icon}`}/></svg>
+        </FooterItem>
         </a>)
       })}
     </FooterList>)
