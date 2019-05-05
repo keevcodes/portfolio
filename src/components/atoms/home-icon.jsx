@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import KiwiBackground from '../../assets/kiwi-background.svg';
+import '../../assets/icons.svg';
 
 const Icon = styled.div`
   display: flex;
@@ -13,12 +13,15 @@ const Icon = styled.div`
   }
 
   & svg {
+    height: 100vh;
     width: 100%;
   }
 `
 
 const HomeIcon = () => (
-  <Icon><KiwiBackground /></Icon>
+  <Icon>
+    <svg><use xlinkHref="#icons_kiwi-background"/></svg>
+  </Icon>
 )
 
 export default HomeIcon;

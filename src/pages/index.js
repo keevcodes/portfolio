@@ -23,7 +23,7 @@ export default () => {
     render={data => {
       return (<Layout>
         <Description headline={data.allPageDataJson.edges[0].node.page.headline} content={data.allPageDataJson.edges[0].node.page.desc}></Description>
-        <HomeIcon width="50%" height="70%" />
+        <HomeIcon />
       </Layout>)}
   }/>)
 }

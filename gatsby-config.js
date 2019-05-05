@@ -14,26 +14,18 @@ module.exports = {
       {icon: 'twitter', link: 'https://twitter.com/keev_me'},
       {icon: 'xing', link: 'https://www.xing.com/profile/Andrew_McKeever/cv'},
       {icon: 'github', link: 'https://github.com/keevkeev'},
-      {icon: 'gmail', link: 'mailto:andmckvr@gmail.com'}
+      {icon: 'mail', link: 'mailto:andmckvr@gmail.com'}
     ]
   },
   plugins: [
     `gatsby-transformer-json`,
     `gatsby-transformer-remark`,
+    'gatsby-plugin-svg-sprite',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data/`
       }
-    },
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /assets/
-        },
-        name: 'Icon'
-      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -56,7 +48,6 @@ module.exports = {
         path: `${__dirname}/src/assets/skills/`,
       },
     },
-
     {
       resolve: `gatsby-source-filesystem`,
     // relative string paths not yet supported by gatsbyImage and variables can not be used in static queries,
