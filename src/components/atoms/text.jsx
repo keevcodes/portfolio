@@ -26,6 +26,11 @@ const SmDarkItalic = styled(SmItalic)`
   padding: 10px 0;
 `
 
+const Medium = styled(Small)`
+  font-size: 22px;
+  font-weight: bold;
+`
+
 
 export const SmallText = (props) => <Small highlight={props.highlight}>{props.text}</Small>
 
@@ -33,4 +38,6 @@ export const SmItalicText = (props) => <SmItalic highlight={props.highlight}>{pr
 
 export const SmDarkText = (props) => <SmDark>{props.text}</SmDark>
 
-export const SmDarkItalicText = (props) => <SmDarkItalic >{props.text}</SmDarkItalic>
+export const SmDarkItalicText = (props) => <SmDarkItalic>{props.text}</SmDarkItalic>
+
+export const MediumText = (props) => <Medium highlight={props.highlight}>{props.text}</Medium>
