@@ -18,7 +18,7 @@ const ProjectList = () => (
               link
               imgPath {
                 childImageSharp {
-                  fluid(maxWidth: 300) {
+                  fluid(maxWidth: 900) {
                     src
                     srcSet
                     aspectRatio
