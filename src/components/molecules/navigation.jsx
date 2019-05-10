@@ -43,17 +43,18 @@ const ListItem = styled.li`
     }
   }
 
-
-  &:hover {
-    .link {
-      opacity: 0;
-      margin-top: -40%;
-      transition: all 0.3s ease;
-
-      &-hidden {
-        opacity: 1;
-        top: 0;
+  @media (min-width: 980px) {
+    &:hover {
+      .link {
+        opacity: 0;
+        margin-top: -40%;
         transition: all 0.3s ease;
+
+        &-hidden {
+          opacity: 1;
+          top: 0;
+          transition: all 0.3s ease;
+        }
       }
     }
   }
