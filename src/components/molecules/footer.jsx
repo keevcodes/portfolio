@@ -8,12 +8,17 @@ const FooterList = styled.ul`
   display: flex;
   justify-content: space-between;
   width: 90vw;
-  margin: 45px auto 15px;
+  margin: 20px auto 0;
   list-style: none;
 
   @media (min-width: 768px) {
     justify-content: flex-start;
     margin: 0 auto;
+  }
+
+  & a {
+    text-decoration: none;
+    padding-bottom: 20px;
   }
 `
 
@@ -60,7 +65,7 @@ const Footer = () => (<StaticQuery
     return (<footer>
     <FooterList>
       {data.site.siteMetadata.footer.map(item => {
-        return (<a href={item.link} key={item.icon} style={{textDecoration: 'none'}}>
+        return (<a href={item.link} key={item.icon} >
         <FooterItem>
           <svg><use xlinkHref={"#icons_" + `${item.icon}`}/></svg>
         </FooterItem>

@@ -15,9 +15,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 const Wrapper = styled.div`
   display: block;
   max-width: 100%;
+  padding: 0 10px 15px;
 
   @media screen and (min-width: 768px) {
     margin-left: -30px;
+      padding: 0;
   }
 `
 
