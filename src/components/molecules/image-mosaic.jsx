@@ -3,17 +3,9 @@ import {StaticQuery,  graphql } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
 import Img from 'gatsby-image';
 
-const bounce = keyframes`
-  0% {
-    transform: translate3d(0, -1%, 0);
-  }
-
-  50% {
-    transform: translate3d(0, 1%, 0);
-  }
-
-  100% {
-    transform: translate3d(0, -1%, 0);
+const grow = keyframes`
+  to {
+    transform: scaleX(1.5);
   }
 `;
 
@@ -29,14 +21,6 @@ const ImageMosaicWrapper = styled.div`
     grid-template-columns: repeat(11, 4vw);
     grid-template-rows: repeat(8, 10vh);
   }
-
-  & .gatsby-image-wrapper:nth-child(2) {
-    animation: ${bounce} 7s infinite;
-  }
-
-  & .gatsby-image-wrapper:nth-child(3) {
-    animation: ${bounce} 5s infinite;
-  }
 `
 
 const ImageMosaic = () => (
@@ -45,21 +29,21 @@ const ImageMosaic = () => (
       query {
         image1: file(relativePath: { eq: "bella_ingy_me.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 200) {
+            fluid(maxWidth: 777) {
               ...GatsbyImageSharpFluid
             }
           }
         }
         image2: file(relativePath: { eq: "ingy_me_wedding.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 290) {
+            fluid(maxWidth: 1100) {
               ...GatsbyImageSharpFluid
             }
           }
         }
         image3: file(relativePath: { eq: "me_ingy_baloo.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 280) {
+            fluid(maxWidth: 960) {
               ...GatsbyImageSharpFluid
             }
           }
