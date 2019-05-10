@@ -21,7 +21,7 @@ const Container = styled.div`
   }
 `
 
-const Content = styled.div`
+const Content = styled.main`
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-evenly;
