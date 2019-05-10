@@ -14,13 +14,24 @@ const ImageMosaicWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     width: 50%;
     left: 50%;
     display: grid;
     grid-template-columns: repeat(11, 4vw);
     grid-template-rows: repeat(8, 10vh);
   }
+
+  & .gatsby-image-wrapper {
+      position: relative;
+      box-shadow: 5px 10px 35px 5px rgba(0, 0, 0, 0.3);
+
+      &:last-child {
+        @media (min-width: 768px) {
+          margin-right: -30px;
+        }
+      }
+    }
 `
 
 const ImageMosaic = () => (
@@ -54,8 +65,8 @@ const ImageMosaic = () => (
       return (
         <ImageMosaicWrapper>
           <Img fluid={data.image2.childImageSharp.fluid} style={{ gridColumn: '5/-1', gridRow: '1/6'}}/>
-          <Img fluid={data.image1.childImageSharp.fluid} style={{ gridColumn: '1/7', gridRow: '4/8', boxShadow:  '5px 10px 35px 5px rgba(0, 0, 0, 0.3'}}/>
-          <Img fluid={data.image3.childImageSharp.fluid} style={{ gridColumn: '6/-1', gridRow: '5 / -1', marginRight: '-30px', boxShadow:  '5px 10px 35px 5px rgba(0, 0, 0, 0.3'}}/>
+          <Img fluid={data.image1.childImageSharp.fluid} style={{ gridColumn: '1/7', gridRow: '4/8'}}/>
+          <Img fluid={data.image3.childImageSharp.fluid} style={{ gridColumn: '6/-1', gridRow: '5 / -1'}}/>
         </ImageMosaicWrapper>
     )}} />)
 
