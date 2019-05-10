@@ -27,7 +27,7 @@ const SmDarkItalic = styled(SmItalic)`
 `
 
 const Medium = styled(Small)`
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
 `
 
