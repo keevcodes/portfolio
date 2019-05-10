@@ -11,11 +11,11 @@ import './layout.css'
 
 const Container = styled.div`
   min-height: 100vh;
-  padding-bottom: 50px;
   background: linear-gradient(45deg,#000000,#000000,#414345,#9b9999);
 
   @media (min-width: 768px) {
     max-height: 100vh;
+    padding-bottom: 50px;
     height: 100vh;
     padding-bottom: 0;
   }
