@@ -7,9 +7,9 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
+import {SmDarkText} from '../components/atoms/text';
 
 import { BlogHeadline, PostHeadline } from '../components/atoms/headline';
-import { SmDarkText } from '../components/atoms/text';
 
 import styled, {ThemeProvider}  from 'styled-components';
 import defaultTheme from '../assets/defaultTheme';
@@ -22,9 +22,35 @@ const Wrapper = styled.div`
     max-width: 750px;
     margin: 100px auto;
   }
+
+  .home-link {
+    text-decoration: none;
+    padding: 7px 15px;
+    font-size: 18px;
+    font-family: 'Lato', 'sans-serif';
+    color: ${props => props.theme.purple};
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 2px solid ${props => props.theme.purple};
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: ${props => props.theme.greenSmoke};
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+  }
 `
-const Header = styled.div`
-  width: 100%;
+
+const Nav = styled.header`
+  display: flex;
+  margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 65px;
+  }
 `
 
 const PostContent = styled.main`
@@ -32,6 +58,17 @@ const PostContent = styled.main`
   margin: 20px 0;
   padding: 50px 0;
   border-bottom: 1px solid ${props => props.theme.greenSmoke};
+
+  & .post-card {
+    padding: 30px 35px 50px;
+    background-color: #fff;
+    box-shadow: 0px 1px 2px rgba(52,61,68,0.05);
+
+    &:hover {
+      transition: all 0.5s ease;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.15);
+    }
+  }
 `
 
 const PostInfoWrapper = styled.div`
@@ -49,8 +86,10 @@ const PostInfo = styled.div`
   display: flex;
   align-items: center;
   padding: 12px;
+  padding-left: 0px;
 `
 const PostInfoDate = styled(PostInfo)`
+  padding-left: 15px;
 
   &:before {
     content: '';
@@ -74,25 +113,23 @@ export default ({ data }) => {
       <meta name="description" content="the blog of Andrew McKeever, a web developer in Hamburg Germany"></meta>
     </Helmet>
     <Wrapper>
-    <Link to="/" style={{textDecoration: 'none'}}>
-        <SmDarkText text="Home" />
-    </Link>
-    <Header>
-      <BlogHeadline content="Keevechain"/>
-    </Header>
+      <Nav>
+        <Link to="/" class="home-link">Keeve.me</Link>
+      </Nav>
+    <BlogHeadline content="Keevechain, development opinion storage"/>
       {posts.filter(post => post.node.excerpt !== "").map(({node: post}) => {
         console.log(post)
         return (<PostContent key={post.frontmatter.title}>
           <Link to={post.frontmatter.path} style={{ textDecoration: 'none' }}>
+            <div class="post-card">
             <PostHeadline content={post.frontmatter.title} />
+              <PostInfoWrapper>
+                <PostInfo>{post.frontmatter.readTime} min read</PostInfo>
+                <PostInfoDate>{post.frontmatter.date}</PostInfoDate>
+              </PostInfoWrapper>
+              <SmDarkText text={post.excerpt} />
+            </div>
           </Link>
-          <div style={{ padding: '0 20px' }}>
-            <PostInfoWrapper>
-              <PostInfo>{post.frontmatter.readTime} min read</PostInfo>
-              <PostInfoDate>{post.frontmatter.date}</PostInfoDate>
-            </PostInfoWrapper>
-            <SmDarkText text={post.excerpt} />
-          </div>
         </PostContent>)
       })}
     </Wrapper>

@@ -24,8 +24,13 @@ const PostHl = styled(H2)`
 `
 
 const BlogHl = styled(H1)`
+  font-size: 48px;
   color: ${props => props.theme.greenSmoke};
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    font-size: 56px;
+  }
 `
 
 export const Headline = (props) => <H1>{props.content}</H1>
