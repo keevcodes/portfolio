@@ -9,8 +9,12 @@ const Project = styled.div`
   padding: 5px;
   margin-bottom: 20px;
   background-color: #fff;
-  width: 95%;
+  width: 100%;
   border-radius: 4px;
+
+  media (min-width: 768px) {
+    width: 95%;
+  }
 `
 
 const CardDetails = styled.div`

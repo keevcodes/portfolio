@@ -16,19 +16,18 @@ import defaultTheme from '../assets/defaultTheme';
 
 const Wrapper = styled.div`
   display: block;
-  width: auto;
-  max-width: 750px;
-  margin: 100px auto;
-  padding: 0 20px;
+  margin: 50px 20px 20px;
+
+  @media (min-width: 768px) {
+    max-width: 750px;
+    margin: 100px auto;
+  }
 `
 const Header = styled.div`
   width: 100%;
-  display: inline-flex;
-  align-items: flex-end;
-  justify-content: center;
 `
 
-const PostContent = styled.div`
+const PostContent = styled.main`
   display: block;
   margin: 20px 0;
   padding: 50px 0;
@@ -75,10 +74,10 @@ export default ({ data }) => {
       <meta name="description" content="the blog of Andrew McKeever, a web developer in Hamburg Germany"></meta>
     </Helmet>
     <Wrapper>
-    <Header>
-      <Link to="/" style={{textDecoration: 'none'}}>
+    <Link to="/" style={{textDecoration: 'none'}}>
         <SmDarkText text="Home" />
-      </Link>
+    </Link>
+    <Header>
       <BlogHeadline content="Keevechain"/>
     </Header>
       {posts.filter(post => post.node.excerpt !== "").map(({node: post}) => {
