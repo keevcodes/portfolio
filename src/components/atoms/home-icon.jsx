@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import '../../assets/icons.svg';
+import '../../assets/kiwi-watercolor.svg';
 
 const Container = styled.div`
   height: 50vh;
@@ -22,7 +22,7 @@ const BackgroundIcon = styled.div`
   @media screen and (min-width: 768px) {
     justify-content: center;
     height: 100vh;
-    width: 55vw;
+    width: 50vw;
   }
 
   & svg {
@@ -31,26 +31,13 @@ const BackgroundIcon = styled.div`
   }
 
 `
-const BirdIcon = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: 25%;
-  width: calc(90vw - 5px);
 
-  @media (min-width: 768px) {
-    height: calc(100% - 150px);
-    top: auto;
-  }
-`
-
-const HomeIcon = () => (<Container>
+const HomeIcon = () => {
+return (
+<Container>
   <BackgroundIcon>
-    <svg><use xlinkHref="#icons_kiwi-background"/></svg>
+    <svg><use xlinkHref="#kiwi-watercolor"></use></svg>
   </BackgroundIcon>
-  <BirdIcon>
-    <svg><use xlinkHref="#icons_kiwi-bird"/></svg>
-  </BirdIcon>
-</Container>)
+</Container>)}
 
 export default HomeIcon;
