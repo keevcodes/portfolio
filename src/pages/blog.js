@@ -11,18 +11,11 @@ import {SmDarkText} from '../components/atoms/text';
 
 import { BlogHeadline, PostHeadline } from '../components/atoms/headline';
 
-import styled, {ThemeProvider}  from 'styled-components';
+import styled, {ThemeProvider, createGlobalStyle}  from 'styled-components';
 import defaultTheme from '../assets/defaultTheme';
 
-const Wrapper = styled.div`
-  display: block;
-  margin: 50px 20px 20px;
-
-  @media (min-width: 768px) {
-    max-width: 750px;
-    margin: 100px auto;
-  }
-
+const GlobalStyle = createGlobalStyle`
+  body {
   .home-link {
     text-decoration: none;
     padding: 7px 15px;
@@ -42,15 +35,22 @@ const Wrapper = styled.div`
       transition: all 0.2s ease;
     }
   }
+ }
+`
+
+const Wrapper = styled.div`
+  display: block;
+  margin: 50px 20px 20px;
+
+  @media (min-width: 768px) {
+    max-width: 750px;
+    margin: 75px auto;
+  }
 `
 
 const Nav = styled.header`
   display: flex;
   margin-bottom: 30px;
-
-  @media (min-width: 768px) {
-    margin-bottom: 65px;
-  }
 `
 
 const PostContent = styled.main`
@@ -59,7 +59,7 @@ const PostContent = styled.main`
   padding: 50px 0;
   border-bottom: 1px solid ${props => props.theme.greenSmoke};
 
-  & .post-card {
+  .post-card {
     padding: 30px 35px 50px;
     background-color: #fff;
     box-shadow: 0px 1px 2px rgba(52,61,68,0.05);
@@ -113,15 +113,15 @@ export default ({ data }) => {
       <meta name="description" content="the blog of Andrew McKeever, a web developer in Hamburg Germany"></meta>
     </Helmet>
     <Wrapper>
+    <GlobalStyle />
       <Nav>
-        <Link to="/" class="home-link">Keeve.me</Link>
+        <Link to="/" className="home-link">Keeve.me</Link>
       </Nav>
     <BlogHeadline content="Keevechain, development opinion storage"/>
       {posts.filter(post => post.node.excerpt !== "").map(({node: post}) => {
-        console.log(post)
         return (<PostContent key={post.frontmatter.title}>
           <Link to={post.frontmatter.path} style={{ textDecoration: 'none' }}>
-            <div class="post-card">
+            <div className="post-card">
             <PostHeadline content={post.frontmatter.title} />
               <PostInfoWrapper>
                 <PostInfo>{post.frontmatter.readTime} min read</PostInfo>

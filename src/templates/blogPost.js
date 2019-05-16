@@ -5,19 +5,48 @@
 
 
 import React from 'react';
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { Helmet } from "react-helmet";
-import styled, {ThemeProvider} from 'styled-components';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 import defaultTheme from '../assets/defaultTheme';
 import { BlogHeadline } from '../components/atoms/headline';
 
-const Main = styled.main`
-  width: 100%;
-  max-width: 750px;
-  margin: 100px auto;
-  padding: 0 20px;
-  border-bottom: 1px solid ${props => props.theme.greenSmoke};
+const GlobalStyle = createGlobalStyle`
+body {
+  nav {
+    display: flex;
+    width: 100%;
+    max-width: 750px;
+    margin: 75px auto 0;
+    padding: 0 20px 0;
+  }
+
+  .back-link {
+    text-decoration: none;
+    padding: 7px 15px;
+    font-size: 18px;
+    font-family: 'Lato', 'sans-serif';
+    color: ${props => props.theme.purple};
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 2px solid ${props => props.theme.purple};
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: ${props => props.theme.greenSmoke};
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+  } 
+  
+  .blog-article {
+    padding: 60px 30px;
+    background-color: #fff;
+    box-shadow: 0px 1px 2px rgba(52,61,68,0.05);
+  }
 
   .blog-post-content {
 
@@ -32,6 +61,13 @@ const Main = styled.main`
       color: ${props => props.theme.shinyshamrock};
     }
   }
+}`;
+
+const Main = styled.main`
+  width: 100%;
+  max-width: 750px;
+  margin: 30px auto;
+  padding: 0 20px;
 `
 const PostInfoWrapper = styled.div`
   display: flex;
@@ -63,7 +99,6 @@ const PostInfoDate = styled(PostInfo)`
 
 `
 
-
 export default ({ data }) => {
 
   const { markdownRemark: post } = data
@@ -73,8 +108,12 @@ export default ({ data }) => {
     <title>Keeve.me Blog / {post.frontmatter.title }</title>
     <meta name="description" content={post.frontmatter.description}></meta>
   </Helmet>
-   <Main>
-      <article>
+    <GlobalStyle />
+    <nav>
+      <Link className="back-link" to="/blog">Back</Link>
+    </nav>
+    <Main>
+      <article className="blog-article">
         <BlogHeadline content={post.frontmatter.title}></BlogHeadline>
         <PostInfoWrapper>
           <PostInfo>{post.frontmatter.readTime} min read</PostInfo>
