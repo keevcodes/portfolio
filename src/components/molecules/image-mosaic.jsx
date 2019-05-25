@@ -1,13 +1,7 @@
 import React from 'react';
 import {StaticQuery,  graphql } from 'gatsby';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import Img from 'gatsby-image';
-
-const grow = keyframes`
-  to {
-    transform: scaleX(1.5);
-  }
-`;
 
 const ImageMosaicWrapper = styled.div`
   max-width: 100%;

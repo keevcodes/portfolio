@@ -67,7 +67,7 @@ const Footer = () => (<StaticQuery
       {data.site.siteMetadata.footer.map(item => {
         return (<a href={item.link} key={item.icon} >
         <FooterItem>
-          <svg><use xlinkHref={"#icons_" + `${item.icon}`}/></svg>
+          <svg><use xlinkHref={`#icons_${item.icon}`}/></svg>
         </FooterItem>
         </a>)
       })}
