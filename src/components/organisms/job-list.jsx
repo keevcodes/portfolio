@@ -9,6 +9,11 @@ const List = styled.ul`
   width: 100%;
   margin: 0;
   list-style: none;
+
+  @media (min-width: 768px) {
+    max-height: 50vh;
+    overflow-y: scroll;
+  }
 `
 
 const JobList = () => (<StaticQuery

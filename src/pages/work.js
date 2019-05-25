@@ -11,7 +11,7 @@ const JobContent = styled.div`
   width: 100%;
 
   @media screen and (min-width: 768px) {
-    width: 50%;
+    width: 55%;
   }
 `
 
@@ -19,7 +19,7 @@ const ProjectContent = styled.div`
   width: 100%;
 
   @media screen and (min-width: 768px) {
-    width: 50%;
+    width: 45%;
   }
 `
 
