@@ -1,6 +1,6 @@
 ---
 date: March 12, 2019
-readTime: 10
+readTime: 2
 category: "blog"
 path: "/blog/welcome"
 title: "Kicking things off...Why?"

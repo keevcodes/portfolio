@@ -24,8 +24,8 @@ const FooterList = styled.ul`
 
 const FooterItem = styled.li`
   fill: #fff;
-  height: 2rem;
-  width: 2rem;
+  height: 1.75rem;
+  width: 3rem;
   transform: scale(1);
   transition: color 0.3s ease, transform 0.3s ease;
 

@@ -40,8 +40,8 @@ body {
       border-radius: 4px;
       transition: all 0.2s ease;
     }
-  } 
-  
+  }
+
   .blog-article {
     padding: 60px 30px;
     background-color: #fff;
@@ -52,8 +52,8 @@ body {
 
     & > p {
       font-family: 'Lato', 'sans-serif';
-      font-size: 24px;
-      line-height: 42px;
+      font-size: 18px;
+      line-height: 24px;
       margin: 50px 0;
     }
 
