@@ -9,7 +9,7 @@ const Project = styled.div`
   padding: 5px;
   margin-bottom: 20px;
   background-color: #fff;
-  width: 100%;
+  width: 98%;
   border-radius: 4px;
 
   media (min-width: 768px) {

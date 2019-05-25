@@ -36,7 +36,7 @@ const Job = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin 8px 0;
+  margin 8px 0px;
 `
 const JobCard = (props) => {
 
