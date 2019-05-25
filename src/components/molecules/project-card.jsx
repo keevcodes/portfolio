@@ -7,14 +7,10 @@ import { SmDarkText, SmDarkItalicText } from '../atoms/text';
 
 const Project = styled.div`
   padding: 5px;
-  margin-bottom: 20px;
+  margin: 0 5px 20px;
   background-color: #fff;
-  width: 98%;
+  width: 45%;
   border-radius: 4px;
-
-  media (min-width: 768px) {
-    width: 95%;
-  }
 `
 
 const CardDetails = styled.div`

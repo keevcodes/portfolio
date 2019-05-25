@@ -1,10 +1,15 @@
 import React from 'react';
-
+import styled from 'styled-components';
 import ProjectCard from '../molecules/project-card';
-import Slider from 'react-slick';
 
 import { StaticQuery,  graphql } from 'gatsby';
 
+const List = styled.ul`
+  list-style: none;
+  display: flex;
+  width: 200%;
+  margin: 0;
+`
 const ProjectList = () => (
   <StaticQuery
   query={graphql`
@@ -48,12 +53,11 @@ const ProjectList = () => (
         }}></div>
       )
     };
-    return (
-    <Slider {...settings}>
+    return (<List>
       {data.allMarkdownRemark.edges.map(project => {
         return (<ProjectCard {...project} key={project.node.frontmatter.title} />)
       })}
-    </Slider>)}} />
+    </List>)}} />
 )
 
 export default ProjectList;

@@ -17,6 +17,7 @@ const JobContent = styled.div`
 
 const ProjectContent = styled.div`
   width: 100%;
+  overflow: scroll;
 
   @media screen and (min-width: 768px) {
     width: 45%;
