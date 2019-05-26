@@ -102,6 +102,7 @@ const PostInfoDate = styled(PostInfo)`
 export default ({ data }) => {
 
   const { markdownRemark: post } = data
+  console.log(data);
   return (<ThemeProvider theme={defaultTheme}>
   <>
   <Helmet>

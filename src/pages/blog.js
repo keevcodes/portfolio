@@ -110,6 +110,7 @@ export default ({ data }) => {
   <>
     <Helmet>
       <title>Keeve.me Blog</title>
+      <meta charset='utf-8'></meta>
       <meta name="description" content="the blog of Andrew McKeever, a web developer in Hamburg Germany"></meta>
     </Helmet>
     <Wrapper>
