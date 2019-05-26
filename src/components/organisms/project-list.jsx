@@ -7,7 +7,8 @@ import { StaticQuery,  graphql } from 'gatsby';
 const List = styled.ul`
   list-style: none;
   display: flex;
-  width: 200%;
+  width: auto;
+  min-width: 850px;
   margin: 0;
 `
 const ProjectList = () => (
@@ -38,21 +39,6 @@ const ProjectList = () => (
     }
   `}
   render={data => {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      customPaging: i => (
-        <div style={{
-          backgroundColor: '#fff',
-          borderRadius: '50%',
-          height: '5px',
-          width: '5px'
-        }}></div>
-      )
-    };
     return (<List>
       {data.allMarkdownRemark.edges.map(project => {
         return (<ProjectCard {...project} key={project.node.frontmatter.title} />)
