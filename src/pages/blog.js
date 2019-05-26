@@ -123,7 +123,7 @@ export default ({ data }) => {
         return (<PostContent key={post.frontmatter.title}>
           <Link to={post.frontmatter.path} style={{ textDecoration: 'none' }}>
             <div className="post-card">
-            <PostHeadline content={post.frontmatter.title} />
+              <PostHeadline content={post.frontmatter.title} />
               <PostInfoWrapper>
                 <PostInfo>{post.frontmatter.readTime} min read</PostInfo>
                 <PostInfoDate>{post.frontmatter.date}</PostInfoDate>

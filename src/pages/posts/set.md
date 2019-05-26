@@ -5,7 +5,6 @@ category: "blog"
 path: "/blog/sets"
 title: "The JavaScript Set Object"
 description: "What the Set?"
-imgPath: "./thedude.jpg"
 ---
 
 While doing some work the other day, I had a bit of a problem and learned of something I found quite useful, so I thought "Eh what the hell, why not create a post about this?
