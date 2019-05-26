@@ -59,7 +59,7 @@ const PostContent = styled.main`
   padding: 50px 0;
   border-bottom: 1px solid ${props => props.theme.greenSmoke};
 
-  .post-card {
+  & .post-card {
     padding: 30px 35px 50px;
     background-color: #fff;
     box-shadow: 0px 1px 2px rgba(52,61,68,0.05);

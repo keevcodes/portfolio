@@ -3,7 +3,7 @@ date: May 26th, 2019
 readTime: 5
 category: "blog"
 path: "/blog/sets"
-title: "The JavaScript Set Obejct"
+title: "The JavaScript Set Object"
 description: "What the Set?"
 imgPath: "./thedude.jpg"
 ---
