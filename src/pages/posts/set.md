@@ -9,7 +9,7 @@ description: "What the Set?"
 
 While doing some work the other day, I had a bit of a problem and learned of something I found quite useful, so I thought "Eh what the hell, why not create a post about this?
 
-My team has integrated a **WYSIWYG** (btw...this apparently stands for What You See Is What You Get, three years in this industry I just now learned this. &#129318;)
+My team has integrated a **WYSIWYG** (btw...this apparently stands for What You See Is What You Get, three years in this industry I just now learned this. &#1F648;)
 into our React application's backend to create posts. These posts have two columns, which can return either _markdown_, _buttons_ or _assets_ (images and videos). This data gets returned from our **GraphQl** API as an array of two items, something like this
 
 ```Array [Object{type: "text"}, Object{type: "asset"}]```
