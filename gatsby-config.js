@@ -26,7 +26,7 @@ module.exports = {
       options: {
         name: `Keeve.me`,
         short_name: `Keeve.me`,
-        start_url: `/`,
+        start_url: `https://keeve.me`,
         background_color: `#414345`,
         theme_color: `#5BBA6F`,
         display: `standalone`,
