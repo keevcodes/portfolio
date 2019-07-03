@@ -1,4 +1,5 @@
 ---
+date: June 8th, 2019
 title: Pure Functions in React
 category: "blog"
 readTime: 4
