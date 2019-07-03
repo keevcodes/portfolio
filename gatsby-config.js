@@ -22,6 +22,19 @@ module.exports = {
     `gatsby-transformer-remark`,
     'gatsby-plugin-svg-sprite',
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Keeve.me`,
+        short_name: `Keeve.me`,
+        start_url: `/`,
+        background_color: `#414345`,
+        theme_color: `#5BBA6F`,
+        display: `standalone`,
+        icon: `src/assets/kiwi-watercolor.svg`,
+        theme_color_in_head: false,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/data/`
